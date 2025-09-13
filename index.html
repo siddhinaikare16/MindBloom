@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health & Wellness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- <body class="bg-gray-50"> -->
+
+<body class="bg-indigo-50">
+    <div class="min-h-screen flex flex-col items-center">
+        <!-- Header Section -->
+        <header class="w-full bg-white shadow-sm p-4 sticky top-0 z-50">
+            <div class="container mx-auto flex justify-between items-center px-4 md:px-6">
+                <!-- <a href="#" class="text-2xl font-bold text-gray-800 tracking-tight">MindWell</a> -->
+                <a href="#" class="-m-1.5 p-1.5 flex items-center gap-2">
+                    <img src="mindwell-logo.svg" alt="MindWell Logo" class="h-10 w-10">
+                    <span class="text-2xl font-bold text-gray-800">MindBloom</span>
+                </a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#about"
+                        class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">About</a>
+                    <a href="#tips"
+                        class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Self-Care</a>
+                    <a href="#resources"
+                        class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Resources</a>
+                    <a href="#survey"
+                        class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Survey</a>
+                    <a href="#chatbot"
+                        class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Chatbot</a>
+                </nav>
+                <button id="menu-button"
+                    class="md:hidden text-gray-800 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md rounded-b-lg">
+                <nav class="flex flex-col space-y-2 p-4">
+                    <a href="#about"
+                        class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">About</a>
+                    <a href="#tips"
+                        class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Self-Care</a>
+                    <a href="#resources"
+                        class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Resources</a>
+                    <a href="#survey"
+                        class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Survey</a>
+                    <a href="#chatbot"
+                        class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Chatbot</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <main class="w-full flex-grow">
+            <!-- <section class="w-full py-20 px-4 md:px-6 bg-indigo-50 flex items-center justify-center"> -->
+            <section class="w-full py-12 px-4 md:px-6 flex items-center justify-center"></section>
+            <div class="container mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight mb-4">Your Journey to
+                    Wellness Starts Here</h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Discover a supportive space
+                    dedicated to understanding and nurturing your mental well-being. You are not alone.</p>
+                <a href="#resources"
+                    class="inline-block bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-indigo-700 transition-transform transform hover:scale-105 shadow-lg button">Get
+                    Help Now</a>
+            </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="w-full py-16 px-4 md:px-6">
+                <div class="container mx-auto">
+                    <h2 class="section-title text-3xl md:text-4xl font-bold mb-12">Understanding Mental Health 🧠</h2>
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6">
+                            <p class="text-lg text-gray-700 leading-relaxed">Mental health is a state of well-being
+                                where an individual can realize their own abilities, cope with the normal stresses of
+                                life, work productively, and make a contribution to their community.</p>
+                            <p class="text-lg text-gray-700 leading-relaxed">It's a fundamental part of our overall
+                                health, just like physical health. We all have mental health, and it's essential to take
+                                care of it, regardless of whether we're experiencing a mental health condition.</p>
+                            <p class="text-lg text-gray-700 leading-relaxed">Recognizing the signs of struggle and
+                                knowing when to seek help is a sign of strength, not weakness. This site aims to provide
+                                you with the tools and information to start that journey.</p>
+                        </div>
+                        <div class="w-full rounded-2xl overflow-hidden card">
+                            <img src="https://placehold.co/600x400/81e5d2/2d3748?text=Take+A+Deep+Breath"
+                                alt="A person meditating peacefully" class="w-full h-auto object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Self-Care Tips Section -->
+            <section id="tips" class="w-full py-16 px-4 md:px-6">
+                <div class="container mx-auto">
+                    <h2 class="section-title text-3xl md:text-4xl font-bold mb-12">Practical Self-Care Tips 🧘🏻‍♀</h2>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 md:p-8 rounded-2xl card">
+                            <div class="flex items-center mb-4">
+                                <span class="text-4xl text-indigo-500 mr-4">🧠</span>
+                                <h3 class="text-xl font-semibold text-gray-800">Mindfulness & Meditation</h3>
+                            </div>
+                            <p class="text-gray-600">Spend a few minutes each day focusing on your breath. It can help
+                                reduce stress and bring a sense of calm.</p>
+                        </div>
+                        <div class="bg-white p-6 md:p-8 rounded-2xl card">
+                            <div class="flex items-center mb-4">
+                                <span class="text-4xl text-indigo-500 mr-4">🏃‍♂️</span>
+                                <h3 class="text-xl font-semibold text-gray-800">Regular Exercise</h3>
+                            </div>
+                            <p class="text-gray-600">Physical activity is a powerful mood booster. Even a short walk can
+                                make a big difference.</p>
+                        </div>
+                        <div class="bg-white p-6 md:p-8 rounded-2xl card">
+                            <div class="flex items-center mb-4">
+                                <span class="text-4xl text-indigo-500 mr-4">🎨</span>
+                                <h3 class="text-xl font-semibold text-gray-800">Creative Outlets</h3>
+                            </div>
+                            <p class="text-gray-600">Engage in hobbies like painting, writing, or playing music to
+                                express yourself and relax your mind.</p>
+                        </div>
+                        <div class="bg-white p-6 md:p-8 rounded-2xl card">
+                            <div class="flex items-center mb-4">
+                                <span class="text-4xl text-indigo-500 mr-4">😴</span>
+                                <h3 class="text-xl font-semibold text-gray-800">Prioritize Sleep</h3>
+                            </div>
+                            <p class="text-gray-600">A good night's sleep is crucial for emotional regulation and
+                                cognitive function.</p>
+                        </div>
+                        <div class="bg-white p-6 md:p-8 rounded-2xl card">
+                            <div class="flex items-center mb-4">
+                                <span class="text-4xl text-indigo-500 mr-4">🤝</span>
+                                <h3 class="text-xl font-semibold text-gray-800">Connect with Others</h3>
+                            </div>
+                            <p class="text-gray-600">Social support is vital. Talk to friends, family, or join a
+                                community to feel connected.</p>
+                        </div>
+                        <div class="bg-white p-6 md:p-8 rounded-2xl card">
+                            <div class="flex items-center mb-4">
+                                <span class="text-4xl text-indigo-500 mr-4">🌿</span>
+                                <h3 class="text-xl font-semibold text-gray-800">Spend Time in Nature</h3>
+                            </div>
+                            <p class="text-gray-600">Being outdoors can lower stress levels and improve your overall
+                                mood.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- New AI Affirmation Section -->
+            <section id="affirmation" class="w-full py-16 px-4 md:px-6">
+                <!-- <div class="container mx-auto text-center"> -->
+                <!-- <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 mx-auto">Daily Affirmation ✨</h2> -->
+                <!-- In your index.html file -->
+
+                <div class="container mx-auto">
+                    <h2 class="section-title text-3xl md:text-4xl font-bold mb-12">Daily Affirmation ✨</h2>
+                    <div class="bg-white p-8 md:p-12 rounded-2xl card max-w-2xl mx-auto">
+                        <p id="affirmation-text"
+                            class="text-xl font-medium text-gray-700 mb-6 min-h-[50px] flex items-center justify-center">
+                            Click the button below to generate a new affirmation.</p>
+                        <button id="generate-affirmation"
+                            class="bg-purple-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-purple-700 transition-colors duration-300 button">
+                            Get Your Affirmation ✨
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <section id="resources" class="w-full py-16 px-4 md:px-6">
+                <!-- <div class="container mx-auto text-center">
+                    <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 mx-auto">Help and Resources</h2> -->
+                <!-- In your index.html file -->
+
+                <div class="container mx-auto">
+                    <h2 class="section-title text-3xl md:text-4xl font-bold mb-12">Help and Resources ❤️‍🩹</h2>
+                    <p class="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">If you are struggling or need to talk to
+                        someone, here are some resources available to you. Remember, reaching out is a brave step
+                        towards healing.</p>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-2xl card">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Crisis Hotline</h3>
+                            <p class="text-gray-600 mb-4">Immediate support for those in distress.</p>
+                            <a href="tel:988"
+                                class="text-indigo-600 hover:text-indigo-800 font-semibold text-lg flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path
+                                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.101 6.101l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.232 18 2 12.768 2 6V4a1 1 0 011-1z" />
+                                </svg>
+                                988
+                            </a>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl card">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Therapy Finders</h3>
+                            <p class="text-gray-600 mb-4">Connect with a licensed professional near you.</p>
+                            <a href="https://www.google.com/search?q=find+a+therapist+near+me" target="_blank"
+                                class="text-indigo-600 hover:text-indigo-800 font-semibold text-lg flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                Find a Therapist
+                            </a>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl card">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Support Groups</h3>
+                            <p class="text-gray-600 mb-4">Find a community with shared experiences.</p>
+                            <a href="https://www.google.com/search?q=mental+health+support+groups+near+me"
+                                target="_blank"
+                                class="text-indigo-600 hover:text-indigo-800 font-semibold text-lg flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path
+                                        d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM14.5 7a.5.5 0 00-1 0v4.586l-1.293-1.293a1 1 0 00-1.414 1.414L12.586 15l2.707-2.707a1 1 0 00-1.414-1.414L13.5 11.586V7z" />
+                                </svg>
+                                Find a Group
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mental Health Survey Section -->
+            <section id="survey" class="w-full py-16 px-4 md:px-6">
+                <div class="container mx-auto">
+                    <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 mx-auto text-center">Mental Health
+                        Check-In 🤔</h2>
+
+                    <div id="survey-container" class="bg-white p-8 md:p-12 rounded-2xl card">
+
+                        <!-- Question Card -->
+                        <div id="question-card" class="text-center">
+                            <h3 id="question-text" class="text-2xl font-semibold text-gray-800 mb-8"></h3>
+                            <div id="options-container" class="grid sm:grid-cols-2 gap-6">
+                                <!-- Options will be dynamically injected here -->
+                            </div>
+                        </div>
+
+                        <!-- Survey Complete Section -->
+                        <div id="survey-complete" class="text-center hidden">
+                            <h3 id="score-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4"></h3>
+                            <p id="score-message" class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto"></p>
+
+                            <div id="score-resources"
+                                class="bg-indigo-50 p-6 rounded-lg text-left max-w-2xl mx-auto hidden">
+                                <h4 class="font-bold text-lg mb-2 text-gray-800">Based on your responses, here are some
+                                    suggestions:</h4>
+                                <div id="resource-list" class="space-y-2 text-gray-700">
+                                    <!-- AI recommendations will be dynamically injected here -->
+                                </div>
+                            </div>
+
+                            <button id="retake-button"
+                                class="mt-8 bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-indigo-700 button">Retake</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- AI Chatbot Section -->
+            <section id="chatbot" class="w-full py-16 px-4 md:px-6">
+                <div class="container mx-auto">
+                    <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 mx-auto text-center">Chat with an AI
+                        Therapist 🤗</h2>
+                    <div id="chatbot-container" class="bg-white p-4 rounded-2xl card flex flex-col h-[500px]">
+                        <div id="chat-messages"
+                            class="flex-grow overflow-y-auto p-4 space-y-4 rounded-lg bg-gray-100 mb-4">
+                            <div class="chat-message bot p-4 rounded-xl max-w-[80%]">
+                                <p>Hi there. I'm here to listen. How are you feeling today?</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <input type="text" id="chat-input" placeholder="Type your message here..."
+                                class="flex-grow p-3 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <button id="send-button"
+                                class="bg-indigo-600 text-white p-3 rounded-r-full hover:bg-indigo-700 transition-colors duration-300 button">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path
+                                        d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l.649-.244.406-1.144a1 1 0 011.39-1.39l.104-.083c.31-.248 1.488-.921 2.217-1.46L10.894 2.553z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="w-full bg-gray-800 text-white py-8 px-4 md:px-6 mt-12">
+            <div
+                class="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <p>&copy; 2025 MindBloom. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-indigo-400 transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-indigo-400 transition-colors duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
