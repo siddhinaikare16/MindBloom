@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remedies & Self-care - MindBloom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-indigo-50">
+    <div class="min-h-screen flex flex-col items-center">
+        <!-- Header Section -->
+        <header class="w-full bg-white shadow-sm p-4 sticky top-0 z-50">
+            <div class="container mx-auto flex justify-between items-center px-4 md:px-6">
+                 <a href="index.html" class="-m-1.5 p-1.5 flex items-center gap-2">
+                    <img src="https://placehold.co/40x40/6366f1/FFFFFF?text=MB" alt="MindBloom Logo" class="h-10 w-10 rounded-full">
+                    <span class="text-2xl font-bold text-gray-800">MindBloom</span>
+                </a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">About</a>
+                    <a href="resources.html" class="text-indigo-600 font-bold transition-colors duration-300">Resources</a>
+                    <a href="index.html#survey" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Survey</a>
+                    <a href="index.html#chatbot" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Chatbot</a>
+                    <a href="dashboard.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Dashboard</a>
+                    <a href="forum.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Forum</a>
+                </nav>
+                <button id="menu-button" class="md:hidden text-gray-800 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+             <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md rounded-b-lg">
+                <nav class="flex flex-col space-y-2 p-4">
+                    <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">About</a>
+                    <a href="resources.html" class="text-indigo-600 font-bold py-2 px-4 rounded-md">Resources</a>
+                    <a href="index.html#survey" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Survey</a>
+                    <a href="index.html#chatbot" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Chatbot</a>
+                    <a href="dashboard.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Dashboard</a>
+                    <a href="forum.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Forum</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="w-full flex-grow py-16 px-4 md:px-6">
+            <div class="container mx-auto">
+                <h1 class="section-title text-3xl md:text-4xl font-bold mb-12 text-center">Remedies & Self-Care Tips 🌱</h1>
+                
+                <div class="space-y-16">
+
+                    <!-- 1. Daily Self-Care Habits -->
+                    <section class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 md:order-1">
+                            <h2 class="text-2xl font-bold mb-4">1. Daily Self-Care Habits</h2>
+                            <div class="bg-white p-6 rounded-2xl card space-y-3">
+                                <p><strong>Sleep:</strong> Aim for 7–9 hours per night; maintain a consistent sleep schedule.</p>
+                                <p><strong>Nutrition:</strong> Eat balanced meals with fruits, vegetables, whole grains, and protein. Limit excess sugar and caffeine.</p>
+                                <p><strong>Exercise:</strong> Even 20–30 minutes of walking, yoga, or stretching can improve mood and reduce anxiety.</p>
+                                <p><strong>Hydration:</strong> Drink enough water; dehydration can affect mood and energy.</p>
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop" alt="Person doing yoga at sunrise" class="rounded-2xl shadow-lg w-full h-auto object-cover">
+                        </div>
+                    </section>
+
+                    <!-- 2. Mindfulness & Relaxation -->
+                    <section class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <img src="https://images.pexels.com/photos/3848673/pexels-photo-3848673.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Person meditating peacefully indoors" class="rounded-2xl shadow-lg w-full h-auto object-cover">
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">2. Mindfulness & Relaxation</h2>
+                            <div class="bg-white p-6 rounded-2xl card space-y-3">
+                                <p><strong>Meditation:</strong> 5–15 minutes daily can reduce stress and improve focus.</p>
+                                <p><strong>Deep breathing exercises:</strong> Try 4-7-8 breathing or box breathing to calm your nervous system.</p>
+                                <p><strong>Progressive muscle relaxation:</strong> Tense and release muscles to reduce physical tension.</p>
+                                <p><strong>Mindful journaling:</strong> Write down thoughts and feelings to process emotions.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 3. Social Connection -->
+                    <section class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 md:order-1">
+                            <h2 class="text-2xl font-bold mb-4">3. Social Connection</h2>
+                            <div class="bg-white p-6 rounded-2xl card space-y-3">
+                                <p><strong>Stay connected:</strong> Talk with friends or family, even virtually.</p>
+                                <p><strong>Join support groups:</strong> Online or local mental health communities can provide understanding and encouragement.</p>
+                                <p><strong>Set boundaries:</strong> Learn to say no to toxic relationships or situations that drain you.</p>
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2">
+                             <img src="https://images.unsplash.com/photo-1538688423619-a81d3f23454b?q=80&w=2070&auto=format&fit=crop" alt="Friends talking and laughing together" class="rounded-2xl shadow-lg w-full h-auto object-cover">
+                        </div>
+                    </section>
+
+                     <!-- 4. Cognitive Strategies -->
+                    <section class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?q=80&w=2070&auto=format&fit=crop" alt="Person writing goals on a whiteboard" class="rounded-2xl shadow-lg w-full h-auto object-cover">
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">4. Cognitive Strategies</h2>
+                            <div class="bg-white p-6 rounded-2xl card space-y-3">
+                                <p><strong>Challenge negative thoughts:</strong> Identify and reframe unhelpful thoughts.</p>
+                                <p><strong>Set small goals:</strong> Break tasks into manageable steps to avoid feeling overwhelmed.</p>
+                                <p><strong>Gratitude practice:</strong> Write down 2–3 things you’re grateful for daily; it boosts mood.</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- 5. Limiting Stressors -->
+                    <section class="grid md:grid-cols-2 gap-12 items-center">
+                         <div class="order-2 md:order-1">
+                            <h2 class="text-2xl font-bold mb-4">5. Limiting Stressors</h2>
+                            <div class="bg-white p-6 rounded-2xl card space-y-3">
+                                <p><strong>Digital detox:</strong> Reduce social media or news overload.</p>
+                                <p><strong>Time management:</strong> Plan your day to avoid last-minute stress.</p>
+                                <p><strong>Create a calming environment:</strong> Declutter your space and use soothing colors, lighting, or scents.</p>
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2">
+                           <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2158&auto=format&fit=crop" alt="A calm and tidy living room" class="rounded-2xl shadow-lg w-full h-auto object-cover">
+                        </div>
+                    </section>
+                    
+                     <!-- 6. Hobbies & Joy -->
+                    <section class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                           <img src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?q=80&w=1974&auto=format&fit=crop" alt="Person happily gardening" class="rounded-2xl shadow-lg w-full h-auto object-cover">
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">6. Hobbies & Joy</h2>
+                            <div class="bg-white p-6 rounded-2xl card space-y-3">
+                                <p>Engage in activities that make you feel happy or relaxed, like:</p>
+                                <ul class="list-disc list-inside pl-4 text-gray-700">
+                                    <li>Drawing, painting, or crafting</li>
+                                    <li>Listening to music or podcasts</li>
+                                    <li>Gardening or spending time in nature</li>
+                                    <li>Reading or learning a new skill</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 7. Small Lifestyle Tweaks -->
+                    <section class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 md:order-1">
+                            <h2 class="text-2xl font-bold mb-4">7. Small Lifestyle Tweaks</h2>
+                            <div class="bg-white p-6 rounded-2xl card space-y-3">
+                                <p><strong>Reduce alcohol or substance use.</strong></p>
+                                <p><strong>Limit caffeine if anxious.</strong></p>
+                                <p><strong>Get sunlight or fresh air daily.</strong></p>
+                                <p><strong>Practice self-compassion; don’t be harsh on yourself.</strong></p>
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2">
+                             <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format=fit=crop" alt="Sunlight filtering through trees in a forest" class="rounded-2xl shadow-lg w-full h-auto object-cover">
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="w-full bg-gray-800 text-white py-8 px-4 md:px-6 mt-12">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <p>&copy; 2025 MindBloom. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-indigo-400 transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-indigo-400 transition-colors duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

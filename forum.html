@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Forum - MindBloom</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Redirect if not logged in
+    if (!localStorage.getItem("token")) {
+      window.location.href = "login.html";
+    }
+  </script>
+</head>
+<body class="bg-indigo-50">
+  <div class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="w-full bg-white shadow-sm p-4 sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center px-4 md:px-6">
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="https://placehold.co/40x40/6366f1/FFFFFF?text=MB" alt="MindBloom Logo" class="h-10 w-10 rounded-full">
+          <span class="text-2xl font-bold text-gray-800">MindBloom</span>
+        </a>
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center space-x-6 text-gray-600 font-medium">
+          <a href="index.html#about" class="hover:text-indigo-600 transition-colors">Home</a>
+          <a href="resources.html" class="hover:text-indigo-600 transition-colors">Resources</a>
+          <a href="index.html#survey" class="hover:text-indigo-600 transition-colors">Survey</a>
+          <a href="index.html#chatbot" class="hover:text-indigo-600 transition-colors">Chatbot</a>
+          <a href="dashboard.html" class="hover:text-indigo-600 transition-colors">Dashboard</a>
+          <a href="forum.html" class="text-indigo-600 font-semibold">Forum</a>
+          <a href="aboutus.html" class="hover:text-indigo-600 transition-colors">About us</a>
+        </nav>
+        <button id="logoutBtn" class="bg-indigo-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-indigo-700 transition-colors hidden md:block">
+          Logout
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-button" class="md:hidden text-gray-800 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md rounded-b-lg">
+        <nav class="flex flex-col space-y-2 p-4 text-gray-700 font-medium">
+          <a href="index.html#about" class="py-2 px-4 rounded-md hover:bg-indigo-50">Home</a>
+          <a href="resources.html" class="py-2 px-4 rounded-md hover:bg-indigo-50">Resources</a>
+          <a href="index.html#survey" class="py-2 px-4 rounded-md hover:bg-indigo-50">Survey</a>
+          <a href="index.html#chatbot" class="py-2 px-4 rounded-md hover:bg-indigo-50">Chatbot</a>
+          <a href="dashboard.html" class="py-2 px-4 rounded-md hover:bg-indigo-50">Dashboard</a>
+          <a href="forum.html" class="py-2 px-4 rounded-md bg-indigo-100 font-semibold text-indigo-700">Forum</a>
+          <a href="aboutus.html" class="py-2 px-4 rounded-md hover:bg-indigo-50">About us</a>
+          <button id="logoutBtnMobile" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition">
+            Logout
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Forum Section -->
+    <main class="w-full flex-grow py-12 px-4 md:px-6">
+      <div class="container mx-auto">
+        <div class="text-center py-8">
+          <h1 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Community Forum 💬</h1>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            A safe space to share experiences and find support. Your posts are anonymous unless you add your name.
+          </p>
+        </div>
+
+        <!-- New Post Form -->
+        <div class="bg-white max-w-2xl mx-auto p-8 mb-12 rounded-xl shadow-md border border-gray-200">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">Share Your Story</h2>
+          <form id="post-form">
+            <input type="text" id="post-title" placeholder="Title" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-indigo-500 outline-none" required />
+            <input type="text" id="post-name" placeholder="Your Name (Optional)" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-indigo-500 outline-none" />
+            <select id="post-category" class="w-full p-3 border border-gray-300 rounded-lg mb-4 bg-white focus:ring-2 focus:ring-indigo-500 outline-none" required>
+              <option value="">Select a Category</option>
+              <option value="work">Work Stress</option>
+              <option value="growth">Personal Growth</option>
+              <option value="sleep">Sleep Help</option>
+              <option value="relationships">Relationships</option>
+            </select>
+            <textarea id="post-content" placeholder="What's on your mind?" rows="5" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-indigo-500 outline-none" required></textarea>
+            <div id="form-feedback" class="text-center mb-4 h-5"></div>
+            <button type="submit" id="post-button" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition flex items-center justify-center gap-2">
+              <span id="post-button-text">Post Anonymously</span>
+              <svg id="post-spinner" class="animate-spin h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Posts Section -->
+        <div id="posts-container" class="max-w-2xl mx-auto space-y-8"></div>
+        <div class="text-center mt-12">
+          <button id="load-more-btn" class="bg-white text-indigo-600 font-bold py-3 px-8 rounded-full shadow-sm border border-gray-200 hover:bg-gray-100 transition">
+            Load More
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="forum.js"></script>
+  <script>
+    // Logout for desktop & mobile
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.clear();
+      window.location.href = "login.html";
+    });
+    document.getElementById("logoutBtnMobile").addEventListener("click", () => {
+      localStorage.clear();
+      window.location.href = "login.html";
+    });
+
+    // Toggle mobile menu
+    document.getElementById("menu-button").addEventListener("click", () => {
+      document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+  </script>
+</body>
+</html>

@@ -1,48 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+:root {
+    --primary-color: #3B82F6;
+    --secondary-color: #60A5FA;
+    --accent-color: #10B981;
+    --background-color: #F9FAFB;
+    --text-color: #1F2937;
+    --card-bg: rgba(255, 255, 255, 0.6);
+    --card-border: rgba(255, 255, 255, 0.2);
+}
+
 body {
-    /* font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #f0f4ff, #e0e7ff);
-    color: #1a202c; */
-    /* In your style.css file
-
-/* 
     font-family: 'Inter', sans-serif;
-    /* Use the same light background as the sections for a seamless look */
-    /* background-color: #f9fafb; /* This is Tailwind's bg-gray-50 */
-    /* color: #1a202c; */ 
-    
-    font-family: 'Inter', sans-serif;
-    color: #1a202c;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
 
+/* Make body background transparent to see animations */
+main {
+    background-color: transparent;
+}
+
+
+/* --- Advanced 3D Nucleus Animation --- */
+.nucleus-container {
+    position: fixed;
+    top: 50%;
+    left: 15%; /* Positioned more to the left */
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    z-index: -2;
+    opacity: 0.1;
+    filter: blur(1.5px);
+    perspective: 1000px; /* Added for 3D effect */
+}
+
+.nucleus-container::before, .nucleus-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+}
+
+.nucleus-container::before {
+    animation: rotate-y 15s linear infinite;
+}
+
+.nucleus-container::after {
+    animation: rotate-x 10s linear infinite;
+}
+
+.spike {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 120%;
+    background: var(--primary-color);
+    transform-origin: center;
+    transform: translateY(-50%);
+}
+
+.spike:nth-child(1) { transform: translateY(-50%) rotate(0deg); }
+.spike:nth-child(2) { transform: translateY(-50%) rotate(30deg); }
+.spike:nth-child(3) { transform: translateY(-50%) rotate(60deg); }
+.spike:nth-child(4) { transform: translateY(-50%) rotate(90deg); }
+.spike:nth-child(5) { transform: translateY(-50%) rotate(120deg); }
+.spike:nth-child(6) { transform: translateY(-50%) rotate(150deg); }
+
+
+@keyframes rotate-y {
+    from { transform: rotateY(0deg) rotateX(20deg); }
+    to { transform: rotateY(360deg) rotateX(20deg); }
+}
+
+@keyframes rotate-x {
+    from { transform: rotateX(0deg) rotateY(20deg); }
+    to { transform: rotateX(360deg) rotateY(20deg); }
+}
+/* --- End of Advanced Nucleus --- */
+
+
+/* Abstract Blob Shape */
+body::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80vmax;
+    height: 80vmax;
+    background: radial-gradient(circle, var(--secondary-color), var(--primary-color));
+    border-radius: 50% 60% 70% 40% / 50% 60% 40% 50%;
+    transform: translate(-50%, -50%);
+    z-index: -3; /* Behind everything */
+    opacity: 0.2;
+    filter: blur(100px);
+    animation: morph 20s ease-in-out infinite alternate;
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 50% 60% 70% 40% / 50% 60% 40% 50%;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    100% {
+        border-radius: 40% 70% 50% 60% / 60% 40% 70% 50%;
+        transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+    }
 }
 
 .container {
     max-width: 1000px;
+    margin: 0 auto;
 }
+
 .section-title {
     position: relative;
     display: inline-block;
+    color: var(--text-color);
+    font-weight: 900;
 }
+
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -10px;
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: #6366f1;
+    background-color: var(--primary-color);
     border-radius: 9999px;
 }
+
+h1, h2, h3 {
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+
+/* Glassmorphism Card Style */
 .card {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(59, 130, 246, 0.2);
 }
+
 .chat-message.user {
-    background-color: #e0e7ff;
+    background-color: #dbeafe;
     align-self: flex-end;
     border-bottom-right-radius: 0;
 }
@@ -51,9 +171,42 @@ body {
     align-self: flex-start;
     border-bottom-left-radius: 0;
 }
+
 .button {
-    transition: transform 0.2s ease-in-out;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
+
 .button:hover {
-    transform: translateY(-2px);
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(59, 130, 246, 0.4);
 }
+
+a.button {
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .button {
+        width: auto;
+        padding: 14px 28px;
+    }
+}
+

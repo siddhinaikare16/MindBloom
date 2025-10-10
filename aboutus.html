@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MindBloom</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .page-header-title {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <div class="min-h-screen flex flex-col items-center">
+        <!-- Header Section -->
+        <header class="w-full bg-white shadow-sm p-4 sticky top-0 z-50">
+            <div class="container mx-auto flex justify-between items-center px-4 md:px-6">
+                <a href="index.html" class="-m-1.5 p-1.5 flex items-center gap-2">
+                    <img src="https://placehold.co/40x40/6366f1/FFFFFF?text=MB" alt="MindBloom Logo" class="h-10 w-10 rounded-full">
+                    <span class="text-2xl font-bold text-gray-800">MindBloom</span>
+                </a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Home</a>
+                    <a href="resources.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Resources</a>
+                    <a href="index.html#survey" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Survey</a>
+                    <a href="index.html#chatbot" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Chatbot</a>
+                    <a href="dashboard.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Dashboard</a>
+                    <a href="forum.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Forum</a>
+                  
+                    <a href="about-us.html" class="text-indigo-600 font-bold">About Us</a>
+                </nav>
+                <button id="menu-button" aria-label="Toggle mobile menu" class="md:hidden text-gray-800 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md rounded-b-lg">
+                <nav class="flex flex-col space-y-2 p-4">
+                     <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 font-medium py-2 px-4 rounded-md">Home</a>
+                    <a href="resources.html" class="text-gray-600 hover:text-indigo-600 font-medium py-2 px-4 rounded-md">Resources</a>
+                    <a href="index.html#survey" class="text-gray-600 hover:text-indigo-600 font-medium py-2 px-4 rounded-md">Survey</a>
+                    <a href="index.html#chatbot" class="text-gray-600 hover:text-indigo-600 font-medium py-2 px-4 rounded-md">Chatbot</a>
+                    <a href="dashboard.html" class="text-gray-600 hover:text-indigo-600 font-medium py-2 px-4 rounded-md">Dashboard</a>
+                    <a href="forum.html" class="text-gray-600 hover:text-indigo-600 font-medium py-2 px-4 rounded-md">Forum</a>
+                   
+                    <a href="about-us.html" class="text-indigo-600 font-bold py-2 px-4 rounded-md">About Us</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="w-full flex-grow">
+
+            <!-- Page Header -->
+            <section class="w-full py-16 bg-indigo-100 text-center">
+                <div class="container mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 page-header-title">We're making high-quality mental health care a reality for all.</h1>
+                </div>
+            </section>
+            
+            <!-- Our Story Section -->
+            <section class="py-16 px-4">
+                <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="section-title text-3xl font-bold mb-6">Our Story</h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">MindBloom was founded on the belief that everyone deserves to feel their best. Our journey began when our founders saw a gap in accessible mental health support. We wanted to create a safe, welcoming space online where people could find reliable information, practical tools, and a supportive community.</p>
+                        <p class="text-gray-600 leading-relaxed">From a small idea, we've grown into a platform that helps thousands of individuals on their path to wellness. We combine technology with a human-centric approach, ensuring that our resources are not only innovative but also deeply empathetic and effective.</p>
+                    </div>
+                    <div>
+                        <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Diverse team collaborating on a project" class="rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Values Section -->
+            <section class="py-16 px-4 bg-white">
+                 <div class="container mx-auto text-center">
+                    <h2 class="section-title text-3xl font-bold mb-12">Our Core Values</h2>
+                    <div class="grid md:grid-cols-3 gap-10">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Empathy First</h3>
+                            <p class="text-gray-600">We approach everything we do with compassion and a deep understanding of the human experience.</p>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Clinically-Rooted</h3>
+                            <p class="text-gray-600">Our methods are grounded in scientific research and evidence-based practices for effective care.</p>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Unwavering Integrity</h3>
+                            <p class="text-gray-600">We are committed to the highest standards of privacy, confidentiality, and ethical conduct.</p>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+            
+            <!-- In the News Section -->
+            <section class="py-16 px-4 bg-white">
+                <div class="container mx-auto text-center">
+                    <h2 class="section-title text-3xl font-bold mb-12">MindBloom in the News</h2>
+                    <div class="flex flex-wrap justify-center items-center gap-12">
+                        <img src="https://placehold.co/150x50/cccccc/ffffff?text=TechChronicle" alt="TechChronicle logo" class="h-10">
+                        <img src="https://placehold.co/150x50/cccccc/ffffff?text=Wellness+Today" alt="Wellness Today logo" class="h-12">
+                        <img src="https://placehold.co/150x50/cccccc/ffffff?text=The+Startup+Times" alt="The Startup Times logo" class="h-10">
+                         <img src="https://placehold.co/150x50/cccccc/ffffff?text=Digital+Health" alt="Digital Health logo" class="h-12">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Careers Section -->
+            <section class="py-16 px-4">
+                <div class="container mx-auto text-center bg-indigo-600 text-white p-12 rounded-xl shadow-lg">
+                    <h2 class="text-3xl font-bold mb-4">Join our Mission</h2>
+                    <p class="text-lg max-w-2xl mx-auto mb-8">We’re looking for passionate individuals to help us reshape the future of mental health care. If you believe in our mission, we’d love to hear from you.</p>
+                    <a href="#" class="inline-block bg-white text-indigo-600 font-semibold py-3 px-8 rounded-full transition-transform transform hover:scale-105 button">View Open Positions</a>
+                </div>
+            </section>
+
+            <!-- Get in Touch Section -->
+            <section class="py-16 px-4 bg-gray-100">
+                <div class="container mx-auto text-center">
+                    <h2 class="section-title text-3xl font-bold mb-12">Get in touch with us</h2>
+                    <div class="grid md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
+                        <!-- For Individuals -->
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2">For Individuals</h3>
+                            <p class="text-gray-600 mb-4">Need help finding the right mental health support?</p>
+                            <a href="#" class="font-bold text-indigo-600 hover:underline">CONNECT WITH US</a>
+                        </div>
+                        <!-- For Organizations -->
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2">For Organizations</h3>
+                            <p class="text-gray-600 mb-4">Want mental health support for your organization?</p>
+                            <a href="#" class="font-bold text-indigo-600 hover:underline">PARTNER WITH US</a>
+                        </div>
+                        <!-- For Careers -->
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-2">For Careers</h3>
+                            <p class="text-gray-600 mb-4">Looking to be a part of Amaha's team?</p>
+                            <a href="#" class="font-bold text-indigo-600 hover:underline">WORK WITH US</a>
+                        </div>
+                    </div>
+                    <p class="mt-8 text-gray-500">If you didn't find what you were looking for, please reach out to us at <a href="mailto:support@mindbloom.com" class="text-indigo-600">support@mindbloom.com</a></p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="w-full bg-gray-800 text-white py-8 px-4 md:px-6">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <p>&copy; 2025 MindBloom. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-indigo-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-indigo-400">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuButton) {
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+

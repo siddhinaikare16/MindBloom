@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles & Blogs - MindBloom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-indigo-50">
+    <div class="min-h-screen flex flex-col items-center">
+        <!-- Header Section -->
+        <header class="w-full bg-white shadow-sm p-4 sticky top-0 z-50">
+            <div class="container mx-auto flex justify-between items-center px-4 md:px-6">
+                <a href="index.html" class="-m-1.5 p-1.5 flex items-center gap-2">
+                    <img src="https://placehold.co/40x40/6366f1/FFFFFF?text=MB" alt="MindBloom Logo" class="h-10 w-10 rounded-full">
+                    <span class="text-2xl font-bold text-gray-800">MindBloom</span>
+                </a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">About</a>
+                    <a href="resources.html" class="text-indigo-600 font-bold transition-colors duration-300">Resources</a>
+                    <a href="index.html#survey" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Survey</a>
+                    <a href="index.html#chatbot" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Chatbot</a>
+                    <a href="dashboard.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Dashboard</a>
+                    <a href="forum.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Forum</a>
+                </nav>
+                <button id="menu-button" class="md:hidden text-gray-800 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md rounded-b-lg">
+                <nav class="flex flex-col space-y-2 p-4">
+                    <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">About</a>
+                    <a href="resources.html" class="text-indigo-600 font-bold py-2 px-4 rounded-md">Resources</a>
+                    <a href="index.html#survey" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Survey</a>
+                    <a href="index.html#chatbot" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Chatbot</a>
+                    <a href="dashboard.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Dashboard</a>
+                    <a href="forum.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Forum</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="w-full flex-grow py-16 px-4 md:px-6">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h1 class="section-title text-3xl md:text-4xl font-bold mb-4">Articles & Blogs ✍️</h1>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Educational content to spread awareness and provide guidance on your mental wellness journey.</p>
+                </div>
+                
+                <!-- Articles Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Article Card 1 -->
+                    <div class="card overflow-hidden flex flex-col">
+                        <img src="https://images.pexels.com/photos/312839/pexels-photo-312839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="A calm, sunlit room with plants, evoking mindfulness" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">The Surprising Benefits of Mindfulness</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Learn how a few minutes of mindfulness each day can dramatically reduce stress and improve your focus.</p>
+                            <a href="https://www.apa.org/monitor/2012/07-08/ce-corner" target="_blank" rel="noopener noreferrer" class="font-semibold text-indigo-600 hover:text-indigo-800 transition mt-auto">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Article Card 2 -->
+                    <div class="card overflow-hidden flex flex-col">
+                        <img src="https://images.pexels.com/photos/4098228/pexels-photo-4098228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Journal and pen on a desk" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">How to Start a Journaling Habit for Mental Clarity</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Journaling is a powerful tool for processing thoughts and emotions. Here’s how to get started.</p>
+                            <a href="https://www.urmc.rochester.edu/encyclopedia/content.aspx?ContentID=4552&ContentTypeID=1" target="_blank" rel="noopener noreferrer" class="font-semibold text-indigo-600 hover:text-indigo-800 transition mt-auto">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Article Card 3 -->
+                    <div class="card overflow-hidden flex flex-col">
+                        <img src="https://images.pexels.com/photos/5699475/pexels-photo-5699475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="One person consoling another, representing a difficult conversation" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Navigating Difficult Conversations About Mental Health</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Tips for talking to friends and family about your mental well-being in a constructive way.</p>
+                            <a href="https://www.nami.org/blogs/nami-blog/october-2020/how-to-talk-about-mental-health" target="_blank" rel="noopener noreferrer" class="font-semibold text-indigo-600 hover:text-indigo-800 transition mt-auto">Read More &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Article Card 4 -->
+                    <div class="card overflow-hidden flex flex-col">
+                        <img src="https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Person putting their phone away in their pocket" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">The Importance of a Digital Detox for Your Mind</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Stepping away from screens can lower anxiety and improve sleep. Discover how to unplug effectively.</p>
+                            <a href="https://www.healthline.com/health/mental-health/digital-detox" target="_blank" rel="noopener noreferrer" class="font-semibold text-indigo-600 hover:text-indigo-800 transition mt-auto">Read More &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Article Card 5 -->
+                    <div class="card overflow-hidden flex flex-col">
+                        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="A colorful, healthy salad in a bowl" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Foods That Fight Stress and Boost Your Mood</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Did you know your diet can impact your mental health? Learn about the connection between food and mood.</p>
+                            <a href="https://www.health.harvard.edu/blog/nutritional-strategies-to-ease-anxiety-201604139441" target="_blank" rel="noopener noreferrer" class="font-semibold text-indigo-600 hover:text-indigo-800 transition mt-auto">Read More &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Article Card 6 -->
+                     <div class="card overflow-hidden flex flex-col">
+                        <img src="https://images.pexels.com/photos/3771069/pexels-photo-3771069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Person sleeping peacefully in a comfortable bed" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Your Ultimate Guide to a Better Night's Sleep</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Quality sleep is fundamental to good mental health. Here are proven strategies to improve your sleep hygiene.</p>
+                            <a href="https://www.sleepfoundation.org/sleep-hygiene" target="_blank" rel="noopener noreferrer" class="font-semibold text-indigo-600 hover:text-indigo-800 transition mt-auto">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="w-full bg-gray-800 text-white py-8 px-4 md:px-6 mt-12">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <p>&copy; 2025 MindBloom. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-indigo-400 transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-indigo-400 transition-colors duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Mobile Menu Toggle ---
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuButton) {
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

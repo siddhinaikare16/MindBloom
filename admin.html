@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - MindBloom Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .stat-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div id="password-prompt" class="fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg shadow-xl text-center">
+            <h2 class="text-2xl font-bold mb-4">Admin Access</h2>
+            <p class="text-gray-600 mb-6">Please enter the admin password to view analytics.</p>
+            <input type="password" id="password-input" class="w-full p-3 border border-gray-300 rounded-lg mb-4 text-center" placeholder="Password">
+            <button id="password-submit" class="w-full bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-indigo-700 transition">Submit</button>
+            <p id="error-message" class="text-red-500 mt-4 hidden"></p>
+        </div>
+    </div>
+
+    <main id="dashboard-content" class="container mx-auto p-4 md:p-8 hidden">
+        <header class="mb-8">
+            <h1 class="text-4xl font-extrabold text-gray-800">MindBloom Analytics</h1>
+            <p class="text-lg text-gray-600">Summary of user survey responses.</p>
+        </header>
+
+        <!-- Stats Overview -->
+        <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="stat-card">
+                <h3 class="text-gray-500 font-medium">Total Submissions</h3>
+                <p id="total-submissions" class="text-4xl font-bold text-indigo-600">0</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="text-gray-500 font-medium">Average Age</h3>
+                <p id="average-age" class="text-4xl font-bold text-indigo-600">0</p>
+            </div>
+            <div class="stat-card col-span-2">
+                 <h3 class="text-gray-500 font-medium mb-2">Gender Distribution</h3>
+                 <canvas id="gender-chart" height="80"></canvas>
+            </div>
+        </section>
+
+        <!-- Detailed Charts -->
+        <section class="grid lg:grid-cols-2 gap-8 mb-8">
+            <div class="stat-card">
+                <h3 class="text-xl font-bold mb-4 text-gray-700">How often do you feel overwhelmed?</h3>
+                <canvas id="overwhelmed-chart"></canvas>
+            </div>
+            <div class="stat-card">
+                <h3 class="text-xl font-bold mb-4 text-gray-700">How well do you sleep at night?</h3>
+                <canvas id="sleep-chart"></canvas>
+            </div>
+        </section>
+
+        <!-- Raw Data Table -->
+        <section class="stat-card">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">All Survey Submissions</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Age</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gender</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Overwhelmed</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sleep</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-table" class="bg-white divide-y divide-gray-200">
+                        <!-- Data will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const passwordPrompt = document.getElementById('password-prompt');
+            const dashboardContent = document.getElementById('dashboard-content');
+            const passwordInput = document.getElementById('password-input');
+            const passwordSubmit = document.getElementById('password-submit');
+            const errorMessage = document.getElementById('error-message');
+
+            const login = () => {
+                const password = passwordInput.value;
+                if (!password) {
+                    errorMessage.textContent = 'Password cannot be empty.';
+                    errorMessage.classList.remove('hidden');
+                    return;
+                }
+                sessionStorage.setItem('admin-password', password);
+                fetchAndDisplayData();
+            };
+
+            passwordSubmit.addEventListener('click', login);
+            passwordInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') login();
+            });
+
+            async function fetchAndDisplayData() {
+                const password = sessionStorage.getItem('admin-password');
+                if (!password) {
+                    passwordPrompt.style.display = 'flex';
+                    return;
+                }
+
+                try {
+                    const response = await fetch('http://localhost:3000/api/survey-data', {
+                        headers: {
+                            'x-admin-password': password
+                        }
+                    });
+
+                    if (response.status === 401) {
+                        errorMessage.textContent = 'Incorrect password. Please try again.';
+                        errorMessage.classList.remove('hidden');
+                        sessionStorage.removeItem('admin-password');
+                        passwordPrompt.style.display = 'flex';
+                        return;
+                    }
+
+                    if (!response.ok) {
+                        throw new Error(`Server error: ${response.statusText}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    // Hide password prompt and show dashboard
+                    passwordPrompt.style.display = 'none';
+                    dashboardContent.classList.remove('hidden');
+                    
+                    // Process and display data
+                    displayStats(data);
+                    displayTable(data);
+
+                } catch (error) {
+                    errorMessage.textContent = 'Could not fetch data from server.';
+                    errorMessage.classList.remove('hidden');
+                    console.error('Fetch data error:', error);
+                }
+            }
+
+            function displayStats(data) {
+                // Total Submissions
+                document.getElementById('total-submissions').textContent = data.length;
+
+                // Average Age
+                const totalAge = data.reduce((sum, item) => sum + (parseInt(item.age, 10) || 0), 0);
+                const avgAge = data.length > 0 ? (totalAge / data.length).toFixed(1) : 0;
+                document.getElementById('average-age').textContent = avgAge;
+
+                // Helper to count occurrences
+                const countOccurrences = (arr, key) => arr.reduce((acc, item) => {
+                    acc[item[key]] = (acc[item[key]] || 0) + 1;
+                    return acc;
+                }, {});
+
+                // Gender Chart
+                const genderCounts = countOccurrences(data, 'gender');
+                new Chart(document.getElementById('gender-chart'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: Object.keys(genderCounts),
+                        datasets: [{ data: Object.values(genderCounts), backgroundColor: ['#818cf8', '#a78bfa', '#f472b6'] }]
+                    },
+                    options: { responsive: true, plugins: { legend: { position: 'right' } } }
+                });
+
+                // Overwhelmed Chart
+                const overwhelmedCounts = countOccurrences(data, 'q1');
+                 new Chart(document.getElementById('overwhelmed-chart'), {
+                    type: 'bar',
+                    data: {
+                        labels: Object.keys(overwhelmedCounts),
+                        datasets: [{ label: '# of Responses', data: Object.values(overwhelmedCounts), backgroundColor: '#818cf8' }]
+                    },
+                     options: { indexAxis: 'y', responsive: true, plugins: { legend: { display: false } } }
+                });
+
+                // Sleep Chart
+                const sleepCounts = countOccurrences(data, 'q2');
+                new Chart(document.getElementById('sleep-chart'), {
+                    type: 'bar',
+                    data: {
+                        labels: Object.keys(sleepCounts),
+                        datasets: [{ label: '# of Responses', data: Object.values(sleepCounts), backgroundColor: '#a78bfa' }]
+                    },
+                    options: { indexAxis: 'y', responsive: true, plugins: { legend: { display: false } } }
+                });
+            }
+
+            function displayTable(data) {
+                const tableBody = document.getElementById('data-table');
+                tableBody.innerHTML = ''; // Clear existing data
+                const recentData = data.slice(0, 10); // Show most recent 10
+
+                if (recentData.length === 0) {
+                    tableBody.innerHTML = '<tr><td colspan="5" class="text-center py-4 text-gray-500">No survey data yet.</td></tr>';
+                    return;
+                }
+
+                recentData.forEach(item => {
+                    const row = `
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">${new Date(item.createdAt).toLocaleDateString()}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">${item.age}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">${item.gender}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">${item.q1}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">${item.q2}</td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                });
+            }
+
+            // Attempt to load data on page load if password is in session storage
+            fetchAndDisplayData();
+        });
+    </script>
+</body>
+</html>

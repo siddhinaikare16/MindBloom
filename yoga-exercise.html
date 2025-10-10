@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga & Exercise - MindBloom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-indigo-50">
+    <div class="min-h-screen flex flex-col items-center">
+        <!-- Header Section -->
+        <header class="w-full bg-white shadow-sm p-4 sticky top-0 z-50">
+            <div class="container mx-auto flex justify-between items-center px-4 md:px-6">
+                 <a href="index.html" class="-m-1.5 p-1.5 flex items-center gap-2">
+                    <img src="https://placehold.co/40x40/6366f1/FFFFFF?text=MB" alt="MindBloom Logo" class="h-10 w-10 rounded-full">
+                    <span class="text-2xl font-bold text-gray-800">MindBloom</span>
+                </a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">About</a>
+                    <a href="resources.html" class="text-indigo-600 font-bold transition-colors duration-300">Resources</a>
+                    <a href="index.html#survey" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Survey</a>
+                    <a href="index.html#chatbot" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Chatbot</a>
+                    <a href="dashboard.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Dashboard</a>
+                    <a href="forum.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium">Forum</a>
+                </nav>
+                <button id="menu-button" class="md:hidden text-gray-800 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+             <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md rounded-b-lg">
+                <nav class="flex flex-col space-y-2 p-4">
+                    <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">About</a>
+                    <a href="resources.html" class="text-indigo-600 font-bold py-2 px-4 rounded-md">Resources</a>
+                    <a href="index.html#survey" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Survey</a>
+                    <a href="index.html#chatbot" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Chatbot</a>
+                    <a href="dashboard.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Dashboard</a>
+                    <a href="forum.html" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium py-2 px-4 rounded-md">Forum</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="w-full flex-grow py-16 px-4 md:px-6">
+            <div class="container mx-auto">
+                <h1 class="section-title text-3xl md:text-4xl font-bold mb-12 text-center">Yoga & Exercise Guides 🧘</h1>
+                
+                <!-- Video Grid -->
+                <div class="grid md:grid-cols-2 gap-12 mb-16">
+                    
+                    <!-- Video 1: Guided Meditation -->
+                    <section>
+                        <h2 class="text-2xl font-bold mb-4">Guided Meditation for Beginners</h2>
+                        <div class="aspect-video rounded-2xl overflow-hidden card mb-6">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/O-6f5wQXSu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl card space-y-4">
+                            <p>A perfect 10-minute introduction to mindfulness for those new to meditation. This session helps calm the mind, reduce stress, and bring a sense of peaceful awareness to your day.</p>
+                        </div>
+                    </section>
+
+                    <!-- Video 2: Full Body Yoga -->
+                    <section>
+                        <h2 class="text-2xl font-bold mb-4">15-Minute Full Body Yoga</h2>
+                        <div class="aspect-video rounded-2xl overflow-hidden card mb-6">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/4C-gxOE0j7s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl card space-y-4">
+                            <p>A quick and effective yoga flow to stretch and strengthen your entire body. Ideal for the morning to wake up your muscles or in the evening to unwind, leaving you feeling energized and refreshed.</p>
+                        </div>
+                    </section>
+
+                    <!-- Video 3: Yoga for Anxiety -->
+                    <section>
+                        <h2 class="text-2xl font-bold mb-4">Yoga for Anxiety and Stress</h2>
+                        <div class="aspect-video rounded-2xl overflow-hidden card mb-6">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/bJJWArRfKa0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="bg-white p-6 md:p-8 rounded-2xl card space-y-4">
+                            <p>This gentle 27-minute practice is designed to help you find peace and calm. It focuses on mindful movement and deep breathing to soothe the nervous system and release tension from the body. Perfect for when you're feeling overwhelmed.</p>
+                            <ul class="list-disc list-inside text-gray-700">
+                                <li><strong>Focus:</strong> Calming, gentle movement, and breathwork.</li>
+                                <li><strong>Key Poses:</strong> Child's Pose, Gentle Twists, Seated Forward Bends.</li>
+                                <li><strong>Ends with:</strong> A soothing Savasana (final relaxation).</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Video 4: Mood-Boosting Cardio -->
+                    <section>
+                        <h2 class="text-2xl font-bold mb-4">15-Minute Mood-Boosting Cardio</h2>
+                        <div class="aspect-video rounded-2xl overflow-hidden card mb-6">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/50kH47ZztHs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                         <div class="bg-white p-6 md:p-8 rounded-2xl card space-y-4">
+                            <p>Get your heart rate up and release some endorphins with this fun and energetic 15-minute cardio session. No equipment is needed, just a positive attitude to boost your mood for the day!</p>
+                            <ul class="list-disc list-inside text-gray-700">
+                                 <li><strong>Warm-Up (3 mins):</strong> Light jogging in place, arm circles, leg swings.</li>
+                                 <li><strong>Workout (10 mins):</strong> Circuits of Jumping Jacks, High Knees, Butt Kicks, and Squats.</li>
+                                 <li><strong>Cool-Down (2 mins):</strong> Gentle stretching for major muscle groups.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Written Guides -->
+                <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 text-center">Quick Written Guides ✍️</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- 5-Minute Morning Yoga Flow -->
+                    <section>
+                         <h3 class="text-2xl font-bold mb-4">5-Minute Morning Yoga Flow</h3>
+                        <div class="bg-white p-6 md:p-8 rounded-2xl card space-y-4 h-full">
+                           <p><strong>Step 1: Cat-Cow Stretch</strong> - Start on all fours. Inhale as you drop your belly and look up (Cow). Exhale as you round your spine and tuck your chin (Cat). Repeat 5 times.</p>
+                           <p><strong>Step 2: Downward-Facing Dog</strong> - From all fours, tuck your toes and lift your hips up and back. Pedal your feet to stretch your hamstrings. Hold for 30 seconds.</p>
+                           <p><strong>Step 3: Walk to Forward Fold</strong> - Slowly walk your feet to your hands. Let your head hang heavy. Hold for 30 seconds.</p>
+                           <p><strong>Step 4: Mountain Pose</strong> - Roll up to standing, one vertebra at a time. Stand tall with your feet together and arms at your sides. Take 3 deep breaths.</p>
+                        </div>
+                    </section>
+                    
+                    <!-- Stress Relief Stretches -->
+                    <section>
+                         <h3 class="text-2xl font-bold mb-4">Simple Stretches for Stress Relief</h3>
+                        <div class="bg-white p-6 md:p-8 rounded-2xl card space-y-4 h-full">
+                           <p><strong>1. Neck Rolls:</strong> Gently drop your chin to your chest and slowly roll your right ear towards your right shoulder. Hold for 15-30 seconds, then repeat on the left side.</p>
+                           <p><strong>2. Shoulder Shrugs:</strong> Inhale deeply and lift your shoulders up to your ears. Hold for a few seconds, then exhale and release them down. Repeat 5 times.</p>
+                           <p><strong>3. Seated Spinal Twist:</strong> Sit on the floor with your legs extended. Bend your right knee and place your right foot outside your left thigh. Twist your torso to the right, placing your left elbow on your right knee. Hold for 30 seconds and switch sides.</p>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="w-full bg-gray-800 text-white py-8 px-4 md:px-6 mt-12">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <p>&copy; 2025 MindBloom. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-indigo-400 transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-indigo-400 transition-colors duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
