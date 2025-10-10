@@ -277,6 +277,11 @@ app.get("/api/mood", authMiddleware, async (req, res) => {
 });
 
 
+// Add root route here
+app.get("/", (req, res) => {
+  res.send("Welcome! The API server is running.");
+});
+
 // --- start server ---
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
