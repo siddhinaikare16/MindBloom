@@ -10,7 +10,9 @@ const bcrypt = require('bcryptjs'); // pure JS bcrypt (easier to install)
 const jwt = require('jsonwebtoken');
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+// const PORT = process.env.PORT || 4000;
+
+//commented const port
 
 app.use(cors()); // allow all origins for dev
 app.use(express.json());
@@ -283,9 +285,21 @@ app.get("/", (req, res) => {
 });
 
 // --- start server ---
+// app.listen(PORT, () => {
+//   console.log(`🚀 Server running at http://localhost:${PORT}`);
+//   if (!MONGODB_URI) console.warn('⚠️ .env MONGODB_URI not set — DB features will fail.');
+//   if (!JWT_SECRET) console.warn('⚠️ .env JWT_SECRET not set — tokens use fallback.');
+//   if (!GEMINI_API_KEY) console.warn('⚠️ .env GEMINI_API_KEY not set — AI endpoints will use fallback messages.');
+// });
+
+// added back the port const and listen instead of commented version
+
+const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
-  if (!MONGODB_URI) console.warn('⚠️ .env MONGODB_URI not set — DB features will fail.');
-  if (!JWT_SECRET) console.warn('⚠️ .env JWT_SECRET not set — tokens use fallback.');
-  if (!GEMINI_API_KEY) console.warn('⚠️ .env GEMINI_API_KEY not set — AI endpoints will use fallback messages.');
+  console.log(`🚀 Server running at port ${PORT}`);
+  if (!process.env.MONGODB_URI) console.warn('⚠️ .env MONGODB_URI not set — DB features may fail.');
+  if (!process.env.JWT_SECRET) console.warn('⚠️ .env JWT_SECRET not set — tokens use fallback.');
+  if (!process.env.GEMINI_API_KEY) console.warn('⚠️ .env GEMINI_API_KEY not set — AI endpoints will use fallback messages.');
 });
+
