@@ -59,7 +59,9 @@
 
                 try {
                     // FIXED: Added a slash between the host and the api path
-                    const response = await fetch("http://localhost:4000/api/signup", {
+                    // const response = await fetch("http://localhost:4000/api/signup", {
+                    // above one changed to below for deployment
+                    const response = await fetch("https://mindbloom-8xjk.onrender.com/api/signup", {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ fullName: name, email, password })
