@@ -42,7 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
     saveMoodBtn.textContent = "Saving...";
 
     try {
-      const res = await fetch("http://localhost:4000/api/mood", {
+      // const res = await fetch("http://localhost:4000/api/mood", {
+      //above one changed to below for deployment
+      const res = await fetch("https://mindbloom-8xjk.onrender.com/api/mood", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -85,7 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Fetch Moods for Chart ---
   async function fetchMoodData() {
     try {
-      const res = await fetch("http://localhost:4000/api/mood", {
+      // const res = await fetch("http://localhost:4000/api/mood", {
+      //above one changed to below for deployment
+      const res = await fetch("https://mindbloom-8xjk.onrender.com/api/mood", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Could not fetch mood data");

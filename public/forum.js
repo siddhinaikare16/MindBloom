@@ -24,7 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Fetch posts from backend
   async function loadPosts() {
     try {
-      const res = await fetch('http://localhost:4000/api/forum', {
+      // const res = await fetch('http://localhost:4000/api/forum', {
+      //above one changed to below for deployment
+      const res = await fetch('https://mindbloom-8xjk.onrender.com/api/forum', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -83,7 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:4000/api/forum', {
+      // const res = await fetch('http://localhost:4000/api/forum', {
+      //above one changed to below for deployment
+      const res = await fetch('https://mindbloom-8xjk.onrender.com/api/forum', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -117,7 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.disabled = true; // Prevent double-clicking
 
     try {
-      const res = await fetch(`http://localhost:4000/api/forum/${postId}/like`, {
+      // const res = await fetch(`http://localhost:4000/api/forum/${postId}/like`, {
+      //above one changed to below for deployment
+      const res = await fetch(`https://mindbloom-8xjk.onrender.com/api/forum/${postId}/like`, {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` }
       });

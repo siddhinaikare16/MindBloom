@@ -3,7 +3,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- SERVER URL ---
     // All backend requests will go to this address.
-    const SERVER_URL = 'http://localhost:4000';
+    // const SERVER_URL = 'http://localhost:4000';
+
+    // changed to the below for deployment
+
+    const SERVER_URL = "https://mindbloom-8xjk.onrender.com";
+
 
     // --- Mobile Menu Toggle ---
     const menuButton = document.getElementById('menu-button');
